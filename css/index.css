@@ -1,0 +1,205 @@
+body {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
+}
+textarea{
+  outline:none;
+  resize:none;
+  margin:0;
+}
+ul {
+  margin:0;
+}
+
+#chat-wrap {
+  width:540px;
+  height:420px;
+  margin: 20px auto;
+  box-shadow: 0 2px 2px 2px #999;
+}
+
+/*聊天框的头部*/
+#chat-wrap .chat-header {
+  height:40px;
+  padding:0 10px;
+  background-color: #666;
+}
+#chat-wrap .header-title {
+  height:40px;
+  line-height: 40px;
+  font-size: 14px;
+  color:#eee;
+}
+
+/*聊天框的对话区*/
+#chat-wrap .chat-box{  
+  margin:0;
+  height:220px;
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/*给webkit内核的浏览器自定义滚动条的样式*/
+/*这里start*/
+#chat-wrap .chat-box::-webkit-scrollbar { 
+  width: 4px; 
+} 
+#chat-wrap .chat-box::-webkit-scrollbar-track { 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2); 
+  -webkit-border-radius: 2px; 
+  border-radius: 2px; 
+} 
+#chat-wrap .chat-box::-webkit-scrollbar-thumb { 
+  -webkit-border-radius: 2px; 
+  border-radius: 2px; 
+  background: rgba(102,102,102,0.6); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+} 
+#chat-wrap .chat-box::-webkit-scrollbar-thumb:window-inactive { 
+  background: rgba(0,0,0,0.4); 
+}
+/*这里end*/
+
+#chat-wrap .chat-box ul {
+  padding:10px 20px;
+  overflow: hidden;
+}
+#chat-wrap .chat-box li {
+  position: relative;
+  clear: both;
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 10px 0;
+  font-size: 14px;
+  border-radius: 10px;
+  animation: show-chat 0.15s ease-in;
+  -moz-animation: show-chat 0.15s ease-in;
+  -webkit-animation: show-chat 0.15s ease-in;
+}
+#chat-wrap .chat-box li:before {
+  position: absolute;
+  top: -6px;
+  width: 44px;
+  height: 44px;
+  border-radius: 44px;
+  box-shadow: 0px 0px 2px #888;
+  content: '';
+}
+#chat-wrap .chat-box li:after {
+  position: absolute;
+  top: 8px;
+  content: '';
+  width: 0;
+  height: 0;
+}
+
+/*对对话框中用户人的回复框设置样式*/
+#chat-wrap .chat-box li.user {
+  float: right;
+  margin-right: 70px;
+  background-color: #ddd;
+}
+#chat-wrap .chat-box li.user:before {
+  right: -70px;
+  background: url('../images/author.png.jpg') no-repeat center center;
+  background-size:44px 44px;
+}
+#chat-wrap .chat-box li.user:after {
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ddd;
+  right: -10px;
+}
+
+/*给对话框中机器人的回复框设置样式*/
+#chat-wrap .chat-box li.robot {
+  float: left;
+  margin-left: 70px;
+  background-color: #75a5f4;
+  color:#333;
+}
+#chat-wrap .chat-box li.robot:before {
+  left: -70px;
+  background: url('../images/robot.png') no-repeat center center;
+  background-size:44px 44px;
+}
+#chat-wrap .chat-box li.robot:after {
+  border-left: 10px solid transparent;
+  border-top: 10px solid #75a5f4;
+  left: -10px;
+}
+
+/*兼容浏览器给show-chat设置透明度动画*/
+@keyframes show-chat {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes show-chat {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show-chat {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*聊天框的输入区*/
+#chat-wrap .chat-input {
+  position: relative;
+}
+#chat-wrap .chat-input .input-words {
+  border:none;
+  width:516px;
+  height:143px;
+  padding:8px;
+  font-size: 14px;
+  color:#333;
+  border-top: 1px solid #ddd;
+}
+#chat-wrap .chat-input .input-submit {
+  position: absolute;
+  bottom: 15px;
+  right:15px;
+  background-color: #518cec;
+  border: none;
+  width:50px;
+  height:50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 100%;
+  -moz-box-shadow:0px 0px 2px #444;               
+  -webkit-box-shadow:0px 0px 2px #444;            
+  box-shadow:0px 0px 2px #444;                    
+  -webkit-transition:all 0.5s ease;
+  -moz-transition:all 0.5s ease;
+  -o-transition:all 0.5s ease;
+  opacity: 0.7;
+  cursor: pointer;
+}
+#chat-wrap .chat-input .input-submit:hover {
+  opacity: 1;
+}
