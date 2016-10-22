@@ -1,4 +1,4 @@
-和大家分享下实现前后的过程，希望对大家的学习有益，也可在我的博客中查看这些内容。
+和大家分享下实现前后的过程，希望对大家的学习有益，也可在[我的博客][url8]中查看这些内容。
 
 ## 方案规划   
 
@@ -401,3 +401,4 @@ echo json_encode($arr);
 [url5]:http://www.imooc.com/learn/54
 [url6]:http://www.imooc.com/learn/703
 [url7]:http://www.skjqr.com/
+[url8]:https://1349279985.github.io/2016/10/21/web-robot/
