@@ -401,4 +401,4 @@ echo json_encode($arr);
 [url5]:http://www.imooc.com/learn/54
 [url6]:http://www.imooc.com/learn/703
 [url7]:http://www.skjqr.com/
-[url8]:https://1349279985.github.io/demo笔记/2016/10/21/web-robot/
+[url8]:https://1349279985.github.io/demo笔记/2016/10/21/web-robot.html
